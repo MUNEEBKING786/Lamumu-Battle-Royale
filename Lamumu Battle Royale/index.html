@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lamumu Battle Royale</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="gameTitle">Lamumu Battle Royale</div>
+        
+        <div id="gameStats">
+            <div class="stat-item">
+                <img src="assets/ui/score_icon.png" class="stat-icon" alt="Score">
+                <span>Score: <span id="score">0</span></span>
+            </div>
+            <div class="stat-item">
+                <img src="assets/ui/health_icon.png" class="stat-icon" alt="Health">
+                <span>Health: <span id="health">100</span></span>
+            </div>
+            <div class="stat-item">
+                <img src="assets/ui/level_icon.png" class="stat-icon" alt="Level">
+                <span>Level: <span id="level">1</span></span>
+            </div>
+            <div class="stat-item">
+                <img src="assets/ui/weapon_icon.png" class="stat-icon" alt="Weapon">
+                <span id="weaponType">Milk Blaster</span>
+            </div>
+        </div>
+
+        <div id="gameArea">
+            <div id="player" class="lamumu character">
+                <div class="health-bar">
+                    <div class="health-fill" id="playerHealthBar"></div>
+                </div>
+            </div>
+            
+            <div id="mobileControls" class="mobile-only">
+                <div id="joystickContainer">
+                    <div id="joystick">
+                        <div id="joystickKnob"></div>
+                    </div>
+                </div>
+                <div id="actionButtons">
+                    <div id="shootBtn" class="action-btn">
+                        <img src="assets/ui/shoot_icon.png" alt="Shoot">
+                    </div>
+                    <div id="specialBtn" class="action-btn">
+                        <img src="assets/ui/special_icon.png" alt="Special">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="audioControls">
+            <div id="musicToggle" class="audio-btn">
+                <img id="musicIcon" src="assets/ui/music_on.png" alt="Music">
+            </div>
+            <div id="sfxToggle" class="audio-btn">
+                <img id="sfxIcon" src="assets/ui/sfx_on.png" alt="SFX">
+            </div>
+        </div>
+
+        <div id="powerUpIndicator" class="hidden">
+            <img id="powerUpIcon" class="powerup-icon" src="" alt="Power-up">
+            <div id="powerUpText"></div>
+        </div>
+
+        <div id="startScreen" class="screen">
+            <div class="screen-content">
+                <img src="assets/ui/logo.png" class="title-logo" alt="Game Logo">
+                <div class="controls-info">
+                    <h3>Controls</h3>
+                    <div class="control-row desktop-controls">
+                        <img src="assets/ui/wasd.png" class="control-icon" alt="WASD">
+                        <span>Move LaMumu</span>
+                    </div>
+                    <div class="control-row desktop-controls">
+                        <img src="assets/ui/mouse.png" class="control-icon" alt="Mouse">
+                        <span>Aim and shoot milk bullets</span>
+                    </div>
+                    <div class="control-row desktop-controls">
+                        <img src="assets/ui/spacebar.png" class="control-icon" alt="Spacebar">
+                        <span>Special milk blast attack</span>
+                    </div>
+                    <div class="control-row mobile-only">
+                        <img src="assets/ui/joystick_icon.png" class="control-icon" alt="Joystick">
+                        <span>Touch joystick to move (mobile)</span>
+                    </div>
+                    <div class="control-row mobile-only">
+                        <img src="assets/ui/shoot_icon.png" class="control-icon" alt="Shoot">
+                        <span>Tap to shoot (mobile)</span>
+                    </div>
+                </div>
+                <button id="startBtn" class="game-btn start-btn">
+                    <img src="assets/ui/play_icon.png" alt="Play">
+                    Start Battle!
+                </button>
+                <div class="difficulty-select">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy Cow</option>
+                        <option value="normal" selected>Normal Moo</option>
+                        <option value="hard">Legendary Bull</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameOver" class="screen hidden">
+            <div class="screen-content">
+                <img src="assets/ui/game_over.png" class="title-logo" alt="Game Over">
+                <div class="final-stats">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Enemies Defeated: <span id="enemiesKilled">0</span></p>
+                    <p>Level Reached: <span id="levelReached">1</span></p>
+                </div>
+                <button id="restartBtn" class="game-btn">
+                    <img src="assets/ui/replay_icon.png" alt="Replay">
+                    Play Again
+                </button>
+                <button id="menuBtn" class="game-btn">
+                    <img src="assets/ui/menu_icon.png" alt="Menu">
+                    Main Menu
+                </button>
+            </div>
+        </div>
+
+        <audio id="bgMusic" src="assets/audio/background.mp3"></audio>
+        <audio id="shootSound" src="assets/audio/shoot.mp3"></audio>
+        <audio id="hitSound" src="assets/audio/hit.mp3"></audio>
+        <audio id="enemyHitSound" src="assets/audio/enemy_hit.mp3"></audio>
+        <audio id="enemyDeathSound" src="assets/audio/enemy_death.mp3"></audio>
+        <audio id="powerupSound" src="assets/audio/powerup.mp3"></audio>
+        <audio id="specialAttackSound" src="assets/audio/special_attack.mp3"></audio>
+        <audio id="levelUpSound" src="assets/audio/level_up.mp3"></audio>
+        <audio id="gameOverSound" src="assets/audio/game_over.mp3"></audio>
+    </div>
+</body>
+</html>
